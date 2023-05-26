@@ -1,5 +1,8 @@
 .App {
+  box-sizing: border-box;
   text-align: center;
+  max-width: 384px;
+  margin: 50px auto 30px;
 }
 
 .box{
@@ -8,14 +11,3 @@
   flex-wrap: wrap;
 }
 
-
-.block{
-  background: #ccc;
-  width: 60px;
-  height: 60px;
-}
-
-.block img{
-  width: 100%;
-
-}
