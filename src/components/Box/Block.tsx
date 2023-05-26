@@ -13,7 +13,6 @@ const Block:React.FC<IProps> = ({hasItem,clicked,onClickBlock}) => {
                 <img className="boxImg" src="https://cdn0.iconfinder.com/data/icons/Jewelry/256/Treasure.png" alt="treasure"/>
             </div>
         )
-
     } else if(!hasItem && clicked){
         return <div onClick={onClickBlock} className='block transparent'></div>
     }else{

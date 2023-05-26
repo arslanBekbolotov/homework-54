@@ -1,16 +1,13 @@
 import React, {useState} from 'react';
 import './App.css';
-import Block from "./components/Box/Block";
-
-interface IBLock{
-    hasItem: boolean;
-    clicked: boolean;
-}
+import {IBlock} from "./types";
+import Box from "./components/Box/Box";
+import Button from "./components/Button/Button";
+import Count from "./components/Count/Count";
 
 function App() {
-    let tries:number = 0;
     const createItems=()=>{
-        let box:IBLock[] =  [];
+        let box:IBlock[] =  [];
         const randomIndex = Math.floor(Math.random() * (35 + 1));
 
         for(let i=1;i <= 36;i++){
@@ -37,23 +34,16 @@ function App() {
         }
     }
 
+    const resetItems = ()=>{
+        setItems(createItems());
+        setCount(0);
+    }
 
   return (
     <div className="App">
-        <div className="box">
-            {items.map((item,index)=>{
-                return(
-                    <Block
-                        hasItem={item.hasItem}
-                        clicked={item.clicked}
-                        key={index}
-                        onClickBlock={()=>ShowBlockContent(index,item.hasItem)}
-                    />
-                )
-            })}
-            <p>Количество попыток:{count}</p>
-        </div>
-
+        <Box items={items} ShowBlockContent={ShowBlockContent}/>
+        <Count count={count}/>
+        <Button resetItems={resetItems}/>
     </div>
   );
 }
