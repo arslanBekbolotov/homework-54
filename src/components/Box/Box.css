@@ -1,3 +1,9 @@
+.box{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
 .block{
     background: #ccc;
     width: 60px;

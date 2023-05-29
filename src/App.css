@@ -5,9 +5,3 @@
   margin: 50px auto 30px;
 }
 
-.box{
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-}
-

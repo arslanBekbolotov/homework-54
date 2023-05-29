@@ -5,7 +5,7 @@ import {IBlock} from "../../types";
 
 interface IProps {
     items:IBlock[];
-    ShowBlockContent:(index:number,hasItem:boolean)=>void;
+    ShowBlockContent:(index:number,hasItem:boolean,clicked:boolean)=>void;
 }
 const Box:React.FC<IProps> = ({items,ShowBlockContent}) => {
     return (
@@ -16,7 +16,7 @@ const Box:React.FC<IProps> = ({items,ShowBlockContent}) => {
                         hasItem={item.hasItem}
                         clicked={item.clicked}
                         key={index}
-                        onClickBlock={() => ShowBlockContent(index,item.hasItem)}
+                        onClickBlock={() => ShowBlockContent(index,item.hasItem,item.clicked)}
                     />
                 )
             })}

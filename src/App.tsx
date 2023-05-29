@@ -21,17 +21,20 @@ function App() {
     const [items, setItems] = useState(createItems());
     const [count,setCount]=useState(0);
 
-    const ShowBlockContent = (index:number,hasItem:boolean) =>{
+    const ShowBlockContent = (index:number,hasItem:boolean,clicked:boolean) =>{
         const itemsCopy = [...items];
         const itemCopy = {...itemsCopy[index]};
         itemCopy.clicked = true;
         itemsCopy[index]=itemCopy;
-        setItems(itemsCopy);
-        if(!hasItem){
+
+
+        if(hasItem){
+            setTimeout(() =>  alert('вы нашли клад'),100)
+        }else if(!hasItem && !clicked){
             setCount(count + 1);
-        }else{
-            alert('Вы нашли клад');
         }
+
+        setItems(itemsCopy);
     }
 
     const resetItems = ()=>{
