@@ -27,9 +27,17 @@ function App() {
         itemCopy.clicked = true;
         itemsCopy[index]=itemCopy;
 
-
         if(hasItem){
-            setTimeout(() =>  alert('вы нашли клад'),100)
+            setTimeout(() =>{
+                const  question = window.confirm('Играть по новой');
+                    if(question){
+                        resetItems();
+                    } else{
+                        console.log('no');
+                    }
+            }
+            ,100);
+
         }else if(!hasItem && !clicked){
             setCount(count + 1);
         }
